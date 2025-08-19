@@ -1,0 +1,30 @@
+{
+  "pages": {
+    "home": "Inicio",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "footer": {
+    "section": {
+      "menu": "Menu",
+      "about_us": "Sobre nós",
+      "badge": "Badges"
+    },
+    "shortDescription":"Este projeto demonstra a criação automatizada de uma arquitetura serverless na AWS com Terraform, um modelo escalável e de baixo custo. Ele serve como material prático para a certificação SAA-C03, mostrando uma implantação de site rápida e segura."
+  },
+  "home": {
+    "title": "Bem-vindo ao Meu Site!",
+    "description": "Este é um projeto prático para a certificação AWS Solutions Architect - Associate.",
+    "aboutLink": "Sobre o projeto"
+  },
+  "about": {
+    "title": "Sobre o Projeto",
+    "description": "Este projeto demonstra habilidades em infraestrutura como código (IaC) e CI/CD.",
+    "homeLink": "Voltar à página inicial"
+  },
+  "lang_switcher": {
+    "label": "Idioma",
+    "pt_link": "Português",
+    "en_link": "English"
+  }
+}
