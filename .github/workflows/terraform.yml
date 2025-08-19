@@ -53,7 +53,7 @@ jobs:
           cd infra && terraform init \
             -backend-config="bucket=${{ secrets.TF_AWS_STATEFILE_S3_BUCKET }}" \
             -backend-config="key=${{ github.event.repository.name }}" \
-            -backend-config="region=${{ secrets.TF_AWS_BACKEND_REGION }} }}" \
+            -backend-config="region=${{ secrets.TF_AWS_BACKEND_REGION }}" \
             -backend-config="dynamodb_table=${{ secrets.TF_AWS_LOCK_DYNAMODB_TABLE }}"
 
       - name: Terraform Validate
