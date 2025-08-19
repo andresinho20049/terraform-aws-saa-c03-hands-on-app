@@ -7,8 +7,6 @@ on:
         type: string
         required: true
     secrets:
-      TF_AWS_ACCOUNT_ID: 
-        required: true
       TF_AWS_ROLE_ARN:
         required: true
       TF_AWS_STATEFILE_S3_BUCKET:
@@ -70,7 +68,6 @@ jobs:
           terraform workspace select ${{ inputs.environment }} || terraform workspace new ${{ inputs.environment }}
           terraform plan \
             -var-file="./envs/${{ inputs.environment }}/terraform.tfvars" \
-            -var="account_id=${{ secrets.TF_AWS_ACCOUNT_ID }}" \
             -var="account_username=${{ github.actor }}" \
             -var="project_name=${{ github.event.repository.name }}" \
             -out="${{ inputs.environment }}.plan"
@@ -117,7 +114,6 @@ jobs:
           terraform workspace select ${{ inputs.environment }} || terraform workspace new ${{ inputs.environment }}
           terraform destroy \
             -var-file="./envs/${{ inputs.environment }}/terraform.tfvars" \
-            -var="account_id=${{ secrets.TF_AWS_ACCOUNT_ID }}" \
             -var="account_username=${{ github.actor }}" \
             -var="project_name=${{ github.event.repository.name }}" \
             -auto-approve

@@ -16,7 +16,6 @@ jobs:
     with:
       environment: prod
     secrets:
-      TF_AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
       TF_AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
       TF_AWS_STATEFILE_S3_BUCKET: ${{ secrets.AWS_STATEFILE_S3_BUCKET }}
       TF_AWS_LOCK_DYNAMODB_TABLE: ${{ secrets.AWS_LOCK_DYNAMODB_TABLE }}
