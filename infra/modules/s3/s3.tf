@@ -39,21 +39,26 @@ resource "aws_s3_bucket_policy" "s3_static_site_bucket_policy" {
     Version = "2012-10-17"
     Statement = [
       {
-        Effect    = "Allow"
+        Effect = "Allow"
         Principal = {
-          AWS = "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ${aws_cloudfront_distribution.cloudfront_s3_static_website.id}"
+          Service = "cloudfront.amazonaws.com"
         }
-        Action    = "s3:GetObject"
-        Resource  = "${aws_s3_bucket.s3_static_site_bucket.arn}/*"
+        Action = "s3:GetObject"
+        Resource = "arn:aws:s3:::${aws_s3_bucket.s3_static_site_bucket.id}/*",
+        Condition = {
+          "StringEquals" = {
+            "aws:SourceArn" = "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${aws_cloudfront_distribution.cloudfront_s3_static_website.id}"
+          }
+        }
       },
       {
-        Effect    = "Deny"
-        Principal = "*"
-        Action    = "s3:GetObject"
-        Resource  = "${aws_s3_bucket.s3_static_site_bucket.arn}/*",
-        Condition = {
-          StringNotEquals = {
-            "aws:SourceArn" = "arn:aws:cloudfront::${var.account_id}:distribution/${aws_cloudfront_distribution.cloudfront_s3_static_website.id}"
+        Effect: "Deny",
+        Principal: "*",
+        Action: "s3:GetObject",
+        Resource: "arn:aws:s3:::${aws_s3_bucket.s3_static_site_bucket.id}/*",
+        Condition: {
+          "StringNotEquals": {
+            "aws:SourceArn": "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${aws_cloudfront_distribution.cloudfront_s3_static_website.id}"
           }
         }
       }
@@ -82,3 +87,5 @@ resource "aws_s3_bucket_lifecycle_configuration" "s3_static_site_bucket_lifecycl
 
   depends_on = [ aws_s3_bucket.s3_static_site_bucket, aws_s3_bucket_versioning.s3_static_site_bucket_versioning ]
 }
+
+data "aws_caller_identity" "current" {}
