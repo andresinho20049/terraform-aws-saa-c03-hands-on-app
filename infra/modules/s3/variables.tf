@@ -1,3 +1,9 @@
+variable "account_id" {
+  description = "The AWS account ID"
+  type        = string
+  nullable = false
+}
+
 variable "account_username" {
   description = "The AWS account username"
   type        = string

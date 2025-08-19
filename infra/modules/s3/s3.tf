@@ -53,7 +53,7 @@ resource "aws_s3_bucket_policy" "s3_static_site_bucket_policy" {
         Resource  = "${aws_s3_bucket.s3_static_site_bucket.arn}/*",
         Condition = {
           StringNotEquals = {
-            "aws:SourceArn" = "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${aws_cloudfront_distribution.cloudfront_s3_static_website.id}"
+            "aws:SourceArn" = "arn:aws:cloudfront::${data.aws_caller_identity.aws_caller_identity_current.account_id}:distribution/${aws_cloudfront_distribution.cloudfront_s3_static_website.id}"
           }
         }
       }
@@ -81,4 +81,8 @@ resource "aws_s3_bucket_lifecycle_configuration" "s3_static_site_bucket_lifecycl
   }
 
   depends_on = [ aws_s3_bucket.s3_static_site_bucket, aws_s3_bucket_versioning.s3_static_site_bucket_versioning ]
+}
+
+data "aws_caller_identity" "aws_caller_identity_current" {
+  account_id = var.account_id
 }
