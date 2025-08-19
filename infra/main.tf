@@ -7,5 +7,5 @@ module "s3_static_site" {
   region           = var.region
   app_name         = var.app_name
   environment      = var.environment
-  project          = var.project
+  project_name     = var.project_name
 }

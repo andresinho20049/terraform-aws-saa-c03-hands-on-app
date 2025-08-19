@@ -22,7 +22,7 @@ variable "app_name" {
   nullable = false
 }
 
-variable "project" {
+variable "project_name" {
   description = "The project name for tagging purposes"
   type        = string
   nullable = false

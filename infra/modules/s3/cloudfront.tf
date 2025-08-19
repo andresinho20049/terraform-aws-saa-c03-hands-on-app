@@ -44,7 +44,7 @@ resource "aws_cloudfront_distribution" "cloudfront_s3_static_website" {
     tags = {
         Name = "${var.account_username}.${var.region}.${var.app_name}.cloudfront.${var.environment}"
         environment = var.environment
-        project     = var.project
+        project     = var.project_name
         region      = var.region
     }
 

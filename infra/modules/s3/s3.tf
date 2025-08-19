@@ -5,7 +5,7 @@ resource "aws_s3_bucket" "s3_static_site_bucket" {
   tags = {
     Name        = "${var.account_username}.${var.region}.${var.app_name}.${var.environment}"
     environment = var.environment
-    project     = var.project
+    project     = var.project_name
     region      = var.region
   }
 }

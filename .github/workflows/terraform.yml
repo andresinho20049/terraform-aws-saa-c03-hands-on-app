@@ -69,6 +69,7 @@ jobs:
           terraform plan \
             -var-file="./envs/${{ inputs.environment }}/terraform.tfvars" \
             -var="account_username=${{ github.actor }}" \
+            -var="project_name=${{ github.event.repository.name }}" \
             -out="${{ inputs.environment }}.plan"
 
       - name: Terraform Apply
