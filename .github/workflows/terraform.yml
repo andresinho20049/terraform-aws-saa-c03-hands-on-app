@@ -90,20 +90,20 @@ jobs:
       - name: Install Next.js dependencies
         if: steps.read-destroy-config.outputs.destroy != 'true' && steps.terraform-apply.conclusion == 'success'
         run: |
-          cd src/ && npm install
+          npm install
 
       - name: Build Next.js project
         if: steps.read-destroy-config.outputs.destroy != 'true' && steps.terraform-apply.conclusion == 'success'
         run: |
-          cd src/ && npm run build
+          npm run build
 
       # Upload static files to S3
       - name: Upload Static Files to S3
         if: steps.read-destroy-config.outputs.destroy != 'true' && steps.terraform-apply.conclusion == 'success'
         run: |
           AWS_S3_BUCKET_NAME=$(terraform -chdir=infra output -raw s3_static_site_bucket_name)
-          echo "Uploading files from src/out/ to s3://${AWS_S3_BUCKET_NAME}/"
-          aws s3 sync src/out/ s3://${AWS_S3_BUCKET_NAME}/ --delete
+          echo "Uploading files from out/ to s3://${AWS_S3_BUCKET_NAME}/"
+          aws s3 sync out/ s3://${AWS_S3_BUCKET_NAME}/ --delete
 
       # Only run the following steps if the destroy flag is set to true
       - name: Terraform Destroy
