@@ -24,9 +24,21 @@ resource "aws_cloudfront_distribution" "cloudfront_s3_static_website" {
         allowed_methods  = ["GET", "HEAD"]
         cached_methods   = ["GET", "HEAD"]
         target_origin_id = aws_s3_bucket.s3_static_site_bucket.id
-        cache_policy_id = aws_cloudfront_cache_policy.cloudfront_s3_static_site_cache_policy.id
+        cache_policy_id  = aws_cloudfront_cache_policy.cloudfront_s3_static_site_cache_policy.id
 
         viewer_protocol_policy = "redirect-to-https"
+    }
+    
+    custom_error_response {
+        error_code         = 403
+        response_page_path = "/index.html"
+        response_code      = 200
+    }
+
+    custom_error_response {
+        error_code         = 404
+        response_page_path = "/404.html"
+        response_code      = 200
     }
 
     viewer_certificate {
@@ -48,7 +60,11 @@ resource "aws_cloudfront_distribution" "cloudfront_s3_static_website" {
         region      = var.region
     }
 
-    depends_on = [aws_s3_bucket.s3_static_site_bucket, aws_cloudfront_origin_access_control.cloudfront_s3_oac, aws_cloudfront_cache_policy.cloudfront_s3_static_site_cache_policy]
+    depends_on = [
+        aws_s3_bucket.s3_static_site_bucket,
+        aws_cloudfront_origin_access_control.cloudfront_s3_oac,
+        aws_cloudfront_cache_policy.cloudfront_s3_static_site_cache_policy
+    ]
 }
 
 resource "aws_cloudfront_cache_policy" "cloudfront_s3_static_site_cache_policy" {
