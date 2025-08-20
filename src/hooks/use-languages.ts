@@ -12,7 +12,10 @@ export const getLanguageFromPath = (path: string): LanguageType | null => {
   return isLanguage(langSegment) ? (langSegment as LanguageType) : null;
 };
 
-export const getLocalizedPath = (path: string, newLang: LanguageType): string => {
+export const getLocalizedPath = (
+  path: string,
+  newLang: LanguageType
+): string => {
   const segments = path.split('/');
   if (segments.length > 1 && isLanguage(segments[1])) {
     segments[1] = newLang; // Replace the language segment
@@ -30,4 +33,4 @@ export const getCurrentLanguage = (path: string): LanguageType => {
 
 export const generateStaticParams = async () => {
   return availableLanguages.map((lang) => ({ lang }));
-}
+};
