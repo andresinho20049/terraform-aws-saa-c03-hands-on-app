@@ -1,5 +1,4 @@
-name: "Pipeline for Prod Environment"
-description: "This workflow runs on pushes to the main branch and deploys the Terraform configuration for the prod environment."
+name: 'Pipeline for Prod Environment'
 
 on:
   push:

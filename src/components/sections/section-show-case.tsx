@@ -54,10 +54,10 @@ export const SectionShowCaseItem = ({
   imgSrc,
   icon,
 }: SectionShowCaseItemPropsType) => (
-  <div className='bg-card-bg dark:bg-card-bg-dark h-48 max-w-lg rounded-lg p-6 shadow-lg'>
+  <div className='h-48 max-w-lg rounded-lg bg-card-bg p-6 shadow-lg dark:bg-card-bg-dark'>
     <h3>
       <span>
-        <img src={icon} alt={title} className='mr-2 inline-block h-8 w-8' />
+        <img src={icon} alt={title} className='mr-2 inline-block w-11' />
       </span>
       {title}
     </h3>

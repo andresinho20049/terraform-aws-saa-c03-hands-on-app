@@ -16,8 +16,8 @@ export const pages: PageType[] = [
     labelKey: 'about',
   },
   {
-    href: '/contact',
-    labelKey: 'contact',
+    href: '/resource',
+    labelKey: 'resource',
   },
 ];
 

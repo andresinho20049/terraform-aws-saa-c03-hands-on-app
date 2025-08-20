@@ -31,10 +31,18 @@ export const HeroSection = ({
         <p className='mx-auto my-2 max-w-2xl'>{description}</p>
       </div>
       <div className='mt-6 flex flex-col items-center justify-center gap-5 md:flex-row'>
-        <LinkAppearanceButton href={buttonPrimaryLink} isPrimary>
+        <LinkAppearanceButton
+          href={buttonPrimaryLink}
+          isBlank={buttonPrimaryLink.startsWith('http')}
+          isPrimary
+        >
           {buttonPrimaryText}
         </LinkAppearanceButton>
-        <LinkAppearanceButton href={buttonSecondaryLink} isPrimary={false}>
+        <LinkAppearanceButton
+          href={buttonSecondaryLink}
+          isBlank={buttonSecondaryLink.startsWith('http')}
+          isPrimary={false}
+        >
           {buttonSecondaryText}
         </LinkAppearanceButton>
       </div>

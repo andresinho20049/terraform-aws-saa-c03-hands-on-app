@@ -1,5 +1,4 @@
-name: "Pipeline for Development Environment"
-description: "This workflow runs on pushes to the development branch and deploys the Terraform configuration for the dev environment."
+name: 'Pipeline for Development Environment'
 
 on:
   push:

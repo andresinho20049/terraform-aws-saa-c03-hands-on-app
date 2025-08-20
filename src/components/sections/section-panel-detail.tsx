@@ -47,24 +47,26 @@ export const SectionPanelDetail = ({
             ))}
           </div>
 
-          <div className='bg-card-bg dark:bg-card-bg-dark h-full w-full rounded-lg p-4 shadow-md md:w-2/3'>
+          <div className='h-full w-full rounded-lg bg-card-bg p-4 shadow-md dark:bg-card-bg-dark md:w-2/3'>
             <h3 className='mb-4 text-3xl font-extrabold text-second dark:text-second'>
-              <span>
-                <img
-                  src={dictionary.sections[currentItem].icon}
-                  alt={dictionary.sections[currentItem].title}
-                  className='mr-2 inline-block h-8 w-8'
-                />
-              </span>
+              <img
+                src={dictionary.sections[currentItem].icon}
+                alt={dictionary.sections[currentItem].title}
+                className='mr-2 inline-block h-8 w-8'
+              />
               {dictionary.sections[currentItem].title}
             </h3>
-            <p className='text-lg leading-relaxed text-slate-600'>
-              {dictionary.sections[currentItem].description}
-            </p>
+
+            <p
+              className='resume'
+              dangerouslySetInnerHTML={{
+                __html: dictionary.sections[currentItem].description,
+              }}
+            />
             <img
               src={dictionary.sections[currentItem].imgSrc}
               alt={dictionary.sections[currentItem].title}
-              className='mx-auto mt-4 w-4/6 object-cover'
+              className='mx-auto mt-4 w-10/12 object-cover'
             />
           </div>
         </div>
@@ -86,7 +88,7 @@ const SectionPanelDetailButton = ({
 }: SectionPanelDetailButtonPropsType) => (
   <button
     onClick={onClick}
-    className='bg-card-bg dark:bg-card-bg-dark p-4 shadow-lg transition-colors duration-300 hover:rounded-lg hover:bg-second-light hover:dark:bg-second-dark'
+    className='bg-card-bg p-4 shadow-lg transition-colors duration-300 hover:rounded-lg hover:bg-second-light dark:bg-card-bg-dark hover:dark:bg-second-dark'
   >
     <div className='flex flex-col items-center'>
       <img src={icon} alt={title} className='h-12' />

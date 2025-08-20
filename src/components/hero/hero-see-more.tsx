@@ -17,7 +17,7 @@ export const HeroSeeMore = ({
   imgSrc,
   customClassName = '',
 }: HeroSeeMorePropsType) => (
-  <section className={`flex h-screen flex-wrap ${customClassName}`}>
+  <section className={`flex h-screen flex-wrap 2xl:px-20 ${customClassName}`}>
     <div className='flex h-full w-full flex-col justify-between lg:w-8/12'>
       <section className='flex items-center justify-between px-4'>
         <div className='size-28 landscape:size-12 landscape:lg:size-28'>
@@ -32,10 +32,16 @@ export const HeroSeeMore = ({
         <div className='w-full'>
           <h2 className='text-left'>{title}</h2>
           <div className='my-4 h-2 w-36 bg-primary'></div>
-          <p className='text-md mb-5 lg:mb-16 lg:text-xl'>{description}</p>
-          <div className='w-44'>
+          <p
+            className='resume max-w-5xl'
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+          <div className='my-8 w-44'>
             {buttonLink && (
-              <LinkAppearanceButton href={buttonLink}>
+              <LinkAppearanceButton
+                href={buttonLink}
+                isBlank={buttonLink.startsWith('http')}
+              >
                 <span className='sr-only'>{buttonText}</span>
                 {buttonText || 'Learn more'}
               </LinkAppearanceButton>
@@ -44,13 +50,11 @@ export const HeroSeeMore = ({
         </div>
       </section>
     </div>
-    <div className='hidden h-full w-4/12 items-end px-2 lg:flex'>
+    <div className='hidden h-full w-4/12 items-center px-4 lg:flex'>
       <img
-        width={894}
-        height={1280}
         src={imgSrc}
         alt='Ilustrate Image'
-        className='h-full w-full object-contain object-bottom'
+        className='w-full object-contain object-center'
       />
     </div>
   </section>
