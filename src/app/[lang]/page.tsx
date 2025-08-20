@@ -1,21 +1,40 @@
-import { generateStaticParams } from "@/my-app/hooks/use-languages";
-import Link from "next/link";
-import { PageProps } from "../../../.next/types/app/[lang]/page";
-import { getDictionary } from "../dictionaries";
+import { HeroSection } from '@/my-app/components/hero/hero-section';
+import { generateStaticParams } from '@/my-app/hooks/use-languages';
+import { getDictionary } from '../dictionaries';
+import { PageProps } from './layout';
+import {
+  WaveDiviver,
+  WaveDiviverInvert,
+} from '@/my-app/components/dividers/wave-divider';
+import { HeroSeeMore } from '@/my-app/components/hero/hero-see-more';
 
 export { generateStaticParams };
 
-export default async function Home({params} : PageProps ) {
+export default async function Home({ params }: PageProps) {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
   return (
-    <main>
-      <h1>{dictionary.home.title}</h1>
-      <p>{dictionary.home.description}</p>
-      <Link href={`/${lang}/about`}>
-        {dictionary.home.aboutLink}
-      </Link>
-    </main>
+    <section>
+      <HeroSection
+        title={dictionary.home.title}
+        subtitle={dictionary.home.subtitle}
+        description={dictionary.home.description}
+        buttonPrimaryText={dictionary.home.buttonPrimaryText}
+        buttonPrimaryLink={dictionary.home.buttonPrimaryLink}
+        buttonSecondaryText={dictionary.home.buttonSecondaryText}
+        buttonSecondaryLink={dictionary.home.buttonSecondaryLink}
+      />
+      <WaveDiviverInvert />
+      <HeroSeeMore
+        title={dictionary.home.seeMore.title}
+        description={dictionary.home.seeMore.description}
+        buttonText={dictionary.home.seeMore.buttonText}
+        buttonLink={dictionary.home.seeMore.buttonLink}
+        customClassName='bg-second-light dark:bg-second-dark'
+        imgSrc={dictionary.home.seeMore.imgSrc}
+      />
+      <WaveDiviver />
+    </section>
   );
 }

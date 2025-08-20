@@ -35,11 +35,19 @@
   }
 
   .primary-button {
-    @apply inline-block w-auto min-w-[200px] rounded-md bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-4 text-center text-white no-underline shadow-xl shadow-blue-200 transition-all hover:-translate-y-px hover:bg-gradient-to-b hover:text-gray-200 hover:no-underline hover:shadow-2xl hover:shadow-blue-400 dark:from-blue-700 dark:to-blue-600 dark:shadow-blue-900 dark:hover:from-blue-800 dark:hover:to-blue-700 sm:w-auto;
+    @apply inline-block w-auto min-w-[200px] rounded-md bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-4 text-center text-white no-underline shadow-xl shadow-blue-200 transition-all hover:-translate-y-px hover:bg-gradient-to-b hover:text-gray-200 hover:no-underline hover:shadow-2xl hover:shadow-blue-400 dark:from-blue-800 dark:to-blue-600 dark:shadow-blue-900 dark:hover:from-blue-800 dark:hover:to-blue-700 sm:w-auto;
   }
 
   .secondary-button {
     @apply inline-block w-auto min-w-[200px] rounded-md border border-gray-700 bg-transparent px-6 py-4 text-center text-gray-700 no-underline shadow-sm shadow-neutral-300 transition-all hover:bg-gray-100 hover:text-gray-900 hover:no-underline hover:shadow-md hover:shadow-neutral-400 dark:border-white dark:text-white dark:shadow-sm dark:shadow-neutral-700 dark:hover:bg-neutral-800 dark:hover:text-white dark:hover:shadow-md dark:hover:shadow-neutral-600 sm:w-auto;
+  }
+
+  .resume p {
+    @apply text-base/relaxed font-normal tracking-normal text-stone-900 dark:text-stone-100;
+  }
+
+  .resume span {
+    @apply select-none text-base/relaxed font-light tracking-normal text-stone-900 underline decoration-accent hover:text-accent hover:underline dark:text-cyan-400 dark:text-stone-100;
   }
 }
 

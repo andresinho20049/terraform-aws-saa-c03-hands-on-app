@@ -2,29 +2,139 @@
   "pages": {
     "home": "Home",
     "about": "About",
-    "contact": "Contact"
+    "resource": "Resources"
   },
   "footer": {
     "section": {
       "menu": "Menu",
-      "about_us": "About us",
+      "about_us": "About",
       "badge": "Badges"
     },
-    "shortDescription":"This project demonstrates the automated creation of a serverless architecture on AWS with Terraform, a scalable and low-cost model. It serves as practical material for the SAA-C03 certification, demonstrating fast and secure website deployment."
+    "shortDescription": "This project demonstrates the automated creation of a serverless architecture on AWS with Terraform, a scalable and low-cost model. It serves as practical material for the SAA-C03 certification, demonstrating fast and secure website deployment."
   },
   "home": {
     "title": "Welcome to My Website!",
+    "subtitle": "Infrastructure as Code with Terraform",
     "description": "This is a hands-on project for the AWS Solutions Architect - Associate certification.",
-    "aboutLink": "About this project"
+    "buttonPrimaryText": "I want to meet you",
+    "buttonPrimaryLink": "https://github.com/andresinho20049",
+    "buttonSecondaryText": "About the Project",
+    "buttonSecondaryLink": "en/about",
+    "seeMore": {
+      "title": "AWS SAA-C03 Hands-On",
+      "description": "This project demonstrates a <strong>Cloud-Native</strong> architecture for <span>static web applications</span>. It uses <span>Next.js</span>, not in its default SSR configuration, but in <span>static export</span> mode, ensuring that all components and pages are pre-generated as HTML, CSS, and JavaScript files. This strategy eliminates the need for an application server, allowing the solution to be hosted in an <span>S3 bucket</span> in a purely <strong>serverless</strong> manner.<br/><br/>The infrastructure is provisioned automatically via <span>Terraform (IaC)</span>, which configures <span>S3</span>, <span>CloudFront (CDN)</span>, and <span>Origin Access Control (OAC)</span> to ensure security and performance. The <span>CI/CD</span> pipeline is managed by <strong>GitHub Actions</strong>. With each push, the workflow executes Terraform, builds Next.js, syncs static files with S3, and invalidates the CloudFront cache. The result is a continuous delivery system that ensures fast and secure deployments. The application is served globally through CloudFront, offering low latency and high scalability, with files protected and accessible only via OAC.",
+      "buttonText": "See on GitHub",
+      "buttonLink": "https://github.com/andresinho20049/terraform-aws-saa-c03-hands-on-app",
+      "imgSrc": "/diagram/terraform-aws-saa-c03-hands-on-app-Page-1.drawio.svg"
+    }
   },
   "about": {
     "title": "About the Project",
-    "description": "This project demonstrates skills in infrastructure as code (IaC) and CI/CD.",
-    "homeLink": "Back to home page"
+    "description": "This project is a practical demonstration for the <strong>AWS Solutions Architect - Associate (SAA-C03)</strong> certification.\n\n It uses Terraform to provision and manage a static website on AWS, using services such as S3 and CloudFront, which guarantee high scalability and low cost without the need to manage servers.",
+    "githubText": "See on GitHub",
+    "githubLink": "https://github.com/andresinho20049/terraform-aws-saa-c03-hands-on-app"
   },
   "lang_switcher": {
     "label": "Language",
     "pt_link": "Portuguese",
     "en_link": "English"
+  },
+  "sections_details": {
+    "infra": {
+      "title": "Infrastructure Strategy",
+      "description": "The infrastructure is managed with Terraform. Click on the components below to explore how each service is configured.",
+      "sections": {
+        "browser": {
+          "title": "Browser",
+          "description": "The starting point of all interactions. The <strong>user</strong> accesses the application through a URL, which is directed to the nearest <strong>Content Delivery Network (CDN)</strong> for a fast and responsive experience.",
+          "imgSrc": "/diagram/terraform-aws-saa-c03-hands-on-app-Page-3.drawio.svg",
+          "icon": "/icons/Chrome.svg"
+        },
+        "cdn": {
+          "title": "CloudFront (CDN)",
+          "description": "Acts as a <strong>Content Delivery Network (CDN)</strong>, caching content at <strong>edge locations</strong> around the world. This reduces latency, increases loading speed, and <strong>adds a layer of security</strong>, such as protection against DDoS attacks.",
+          "imgSrc": "/diagram/terraform-aws-saa-c03-hands-on-app-Page-4.drawio.svg",
+          "icon": "/icons/CloudFront.svg"
+        },
+        "oac": {
+          "title": "Origin Access Control (OAC)",
+          "description": "<strong>OAC</strong> establishes secure and private communication between <strong>CloudFront</strong> and the <strong>S3</strong> bucket. It ensures that S3 does not need to be public, allowing only the authorized <strong>CloudFront</strong> distribution to access files.",
+          "imgSrc": "/diagram/terraform-aws-saa-c03-hands-on-app-Page-5.drawio.svg",
+          "icon": "/icons/aws_iam.svg"
+        },
+        "s3": {
+          "title": "S3 Bucket",
+          "description": "The <strong>S3 bucket</strong> hosts all <strong>static files</strong> of the application <strong>(HTML, CSS, JavaScript)</strong> generated by <strong>Next.js</strong>. It is configured to be private, with access restricted only to <strong>CloudFront</strong> via <strong>OAC</strong>, ensuring data security.",
+          "imgSrc": "/diagram/terraform-aws-saa-c03-hands-on-app-Page-6.drawio.svg",
+          "icon": "/icons/s3.svg"
+        },
+        "github": {
+          "title": "Github Actions",
+          "description": "<strong>GitHub Actions</strong> is used to automate the <strong>CI/CD</strong> process. It executes the <strong>pipeline</strong> that includes building <strong>Next.js</strong>, provisioning the infrastructure on <strong>AWS</strong> with <strong>Terraform</strong>, and synchronizing the generated <strong>static files</strong> to <strong>S3</strong>.",
+          "imgSrc": "/diagram/terraform-aws-saa-c03-hands-on-app-Page-7.drawio.svg",
+          "icon": "/icons/GitHub-Actions.svg"
+        }
+      }
+    },
+    "ci": {
+      "title": "CI/CD Flow with GitHub Actions",
+      "description": "Automation is the heart of the project. The CI/CD pipeline ensures that every code change is deployed quickly and safely. Click each step to see the details.",
+      "sections": {
+        "repository": {
+          "title": "1. Push to Repository",
+          "description": "A push to the <strong>GitHub repository</strong> triggers a CI/CD pipeline. This automated workflow starts with <strong>Terraform</strong> to provision and manage the necessary infrastructure. Following this, the pipeline executes a <strong>build process</strong> to compile and prepare the application, ensuring a seamless and efficient deployment.",
+          "imgSrc": "/others/github_workflow.png",
+          "icon": "/icons/GitHub.svg"
+        },
+        "build": {
+          "title": "2. Next.js Build",
+          "description": "The <strong>pipeline</strong> runs the <strong>`next build`</strong> command with <strong>NextConfig</strong> setting the output to <strong>'export'</strong> to compile the application and <strong>generate</strong> all <strong>static files</strong> in the <strong>`out/` folder</strong>. This step transforms the source code into a <strong>static website</strong> ready to be served.",
+          "imgSrc": "/diagram/terraform-aws-saa-c03-hands-on-app-NextBuild.drawio.svg",
+          "icon": "/icons/Nextjs.svg"
+        },
+        "terraform": {
+          "title": "3. Provision Infra (Terraform)",
+          "description": "<strong>Terraform</strong> is used to plan and apply <strong>infrastructure configurations in AWS</strong>. This ensures that the environment <strong>(S3, CloudFront, etc.)</strong> is always up-to-date and <strong>compliant</strong> with the code defined in the repository.",
+          "imgSrc": "/diagram/terraform-aws-saa-c03-hands-on-app-Terraform.drawio.svg",
+          "icon": "/icons/Terraform.svg"
+        },
+        "s3": {
+          "title": "4. Sync with S3",
+          "description": "<strong>Static files generated in the `out/` folder</strong> are pushed to the <strong>S3 bucket</strong> using the AWS CLI. Synchronization ensures that only changed files are updated, making the deployment process fast and efficient.",
+          "imgSrc": "/diagram/terraform-aws-saa-c03-hands-on-app-S3-Sync.drawio.svg",
+          "icon": "/icons/s3.svg"
+        },
+        "cdn": {
+          "title": "5. Invalidate Cache (CloudFront)",
+          "description": "After the files are synced, the <strong>CloudFront cache is invalidated</strong>. This crucial step forces the <strong>CDN</strong> to fetch the latest version of the files from <strong>S3</strong>, ensuring that users see updates immediately.",
+          "imgSrc": "/diagram/terraform-aws-saa-c03-hands-on-app-Page-7.drawio.svg",
+          "icon": "/icons/CloudFront.svg"
+        }
+      }
+    },
+    "advantages": {
+      "title": "Advantages of Serverless Solution",
+      "description": "This <strong>Cloud-Native</strong> architecture offers significant benefits in cost, performance and security.",
+      "sections": {
+        "cost": {
+          "title": "Low Operating Cost",
+          "description": "With <strong>no servers</strong> to manage, costs are based on usage, optimizing infrastructure spending.",
+          "imgSrc": "",
+          "icon": "/icons/manager-cost.svg"
+        },
+        "availability": {
+          "title": "High Availability and Scalability",
+          "description": "The distributed nature of <strong>S3</strong> and <strong>CloudFront</strong> handles traffic spikes without manual intervention.",
+          "imgSrc": "",
+          "icon": "/icons/manager-ipo.svg"
+        },
+        "security": {
+          "title": "Enhanced Security",
+          "description": "<strong>Direct access to S3 is blocked</strong>, minimizing the attack surface and protecting data.",
+          "imgSrc": "",
+          "icon": "/icons/manager-dash.svg"
+        }
+      }
+    }
   }
 }
