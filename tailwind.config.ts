@@ -4,9 +4,17 @@ import defaultColors from 'tailwindcss/colors';
 const customColors = {
   ...defaultColors,
   ...{
-    primary: defaultColors.blue[800],
+    primary: defaultColors.blue[700],
+    primaryDark: defaultColors.blueGray[900],
     second: defaultColors.purple[800],
-    accent: defaultColors.blue[500],
+    accent: defaultColors.cyan[500],
+    commonLight: defaultColors.stone[900],
+    commonDark: defaultColors.stone[100],
+    alternativeLight: defaultColors.stone[600],
+    alternativeDark: defaultColors.stone[500],
+    primaryDisable: defaultColors.blue[300],
+    disableLight: defaultColors.gray[400],
+    disableDark: defaultColors.gray[600],
   },
 };
 
