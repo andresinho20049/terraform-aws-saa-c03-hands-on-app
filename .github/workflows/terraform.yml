@@ -36,18 +36,19 @@ jobs:
 
       # Setup Node.js and build Next.js project
       - name: Setup Node.js
-        if: steps.read-destroy-config.outputs.destroy != 'true' && steps.terraform-apply.conclusion == 'success'
+        if: steps.read-destroy-config.outputs.destroy != 'true'
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # Use a version compatible with your Next.js project
+          node-version: '23'
 
       - name: Install Next.js dependencies
-        if: steps.read-destroy-config.outputs.destroy != 'true' && steps.terraform-apply.conclusion == 'success'
+        if: steps.read-destroy-config.outputs.destroy != 'true'
         run: |
           npm install
 
       - name: Build Next.js project
-        if: steps.read-destroy-config.outputs.destroy != 'true' && steps.terraform-apply.conclusion == 'success'
+        id: node-build
+        if: steps.read-destroy-config.outputs.destroy != 'true'
         run: |
           npm run build
 
@@ -64,7 +65,7 @@ jobs:
           role-session-name: github-actions-pipeline-to-aws
           aws-region: ${{ secrets.TF_AWS_BACKEND_REGION }}
 
-      # Terraform steps
+      # Terraform and Deployment Steps
       - name: Terraform Init
         run: |
           cd infra && terraform init \
@@ -77,10 +78,9 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        if: steps.read-destroy-config.outputs.destroy != 'true'
+        if: steps.read-destroy-config.outputs.destroy != 'true' && steps.node-build.conclusion == 'success'
         id: terraform-plan
         run: |
-          # Navigate to the infra directory before running terraform commands
           cd infra
           terraform workspace select ${{ inputs.environment }} || terraform workspace new ${{ inputs.environment }}
           terraform plan \
@@ -90,14 +90,13 @@ jobs:
             -out="${{ inputs.environment }}.plan"
 
       - name: Terraform Apply
-        if: steps.read-destroy-config.outputs.destroy != 'true'
+        if: steps.read-destroy-config.outputs.destroy != 'true' && steps.terraform-plan.conclusion == 'success'
         id: terraform-apply
         run: |
           cd infra
           terraform workspace select ${{ inputs.environment }} || terraform workspace new ${{ inputs.environment }}
           terraform apply "${{ inputs.environment }}.plan"
 
-      # Upload static files to S3
       - name: Upload Static Files to S3
         if: steps.read-destroy-config.outputs.destroy != 'true' && steps.terraform-apply.conclusion == 'success'
         run: |
@@ -105,7 +104,7 @@ jobs:
           echo "Uploading files from out/ to s3://${AWS_S3_BUCKET_NAME}/"
           aws s3 sync out/ s3://${AWS_S3_BUCKET_NAME}/ --delete
 
-      # Only run the following steps if the destroy flag is set to true
+      # Terraform Destroy step, only run if destroy is set to true
       - name: Terraform Destroy
         if: steps.read-destroy-config.outputs.destroy == 'true'
         id: terraform-destroy
