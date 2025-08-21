@@ -27,6 +27,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Read the destroy configuration when starting the pipeline
+      - name: Read destroy configuration
+        id: read-destroy-config
+        run: |
+          DESTROY="$(jq -r '.${{ inputs.environment }}' ./infra/destroy_config.json)"
+          echo "destroy=$(echo $DESTROY)" >> $GITHUB_OUTPUT
+
       # Setup Node.js and build Next.js project
       - name: Setup Node.js
         if: steps.read-destroy-config.outputs.destroy != 'true' && steps.terraform-apply.conclusion == 'success'
@@ -56,12 +63,6 @@ jobs:
           role-to-assume: ${{ secrets.TF_AWS_ROLE_ARN }}
           role-session-name: github-actions-pipeline-to-aws
           aws-region: ${{ secrets.TF_AWS_BACKEND_REGION }}
-
-      - name: Read destroy configuration
-        id: read-destroy-config
-        run: |
-          DESTROY="$(jq -r '.${{ inputs.environment }}' ./infra/destroy_config.json)"
-          echo "destroy=$(echo $DESTROY)" >> $GITHUB_OUTPUT
 
       # Terraform steps
       - name: Terraform Init
