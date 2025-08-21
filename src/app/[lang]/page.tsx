@@ -15,7 +15,7 @@ export default async function Home({ params }: PageProps) {
   const dictionary = await getDictionary(lang);
 
   return (
-    <section>
+    <main>
       <HeroSection
         title={dictionary.home.title}
         subtitle={dictionary.home.subtitle}
@@ -35,6 +35,6 @@ export default async function Home({ params }: PageProps) {
         imgSrc={dictionary.home.seeMore.imgSrc}
       />
       <WaveDiviver />
-    </section>
+    </main>
   );
 }

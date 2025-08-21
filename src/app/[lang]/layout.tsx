@@ -32,7 +32,7 @@ export default async function LanguageLayout({ children, params }: PageProps) {
       <header>
         <NavBar lang={lang} dictionary={dictionary} />
       </header>
-      <main>{children}</main>
+      {children}
       <footer>
         <FooterComponent lang={lang} dictionary={dictionary} />
       </footer>

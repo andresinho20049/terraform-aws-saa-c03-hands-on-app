@@ -1,14 +1,14 @@
 import { getDictionary } from '@/my-app/app/dictionaries';
-import { generateStaticParams } from '@/my-app/hooks/use-languages';
-import { PageProps } from '../layout';
-import { SectionPanelDetail } from '@/my-app/components/sections/section-panel-detail';
 import {
   WaveDiviver,
   WaveDiviverInvert,
 } from '@/my-app/components/dividers/wave-divider';
+import { SectionPanelDetail } from '@/my-app/components/sections/section-panel-detail';
 import { SectionShowCase } from '@/my-app/components/sections/section-show-case';
-import Link from 'next/link';
+import { TitlePage } from '@/my-app/components/title/title-page';
 import { LinkAppearanceButton } from '@/my-app/components/ui/link-appearance-button';
+import { generateStaticParams } from '@/my-app/hooks/use-languages';
+import { PageProps } from '../layout';
 
 export { generateStaticParams };
 
@@ -28,18 +28,16 @@ export default async function AboutPage({ params }: PageProps) {
   return (
     <main>
       <WaveDiviverInvert />
-      <div className='bg-second-light text-center dark:bg-second-dark'>
-        <h1 className='mb-4'>{dictionary.about.title}</h1>
-        <div className='mx-auto flex max-w-7xl flex-col items-end justify-end gap-4 py-4'>
-          <p
-            className='text-center'
-            dangerouslySetInnerHTML={{ __html: dictionary.about.description }}
-          />
-          <LinkAppearanceButton href={dictionary.about.githubLink} isBlank>
-            {dictionary.about.githubText}
-          </LinkAppearanceButton>
-        </div>
-      </div>
+      <TitlePage
+        title={dictionary.about.title}
+        description={dictionary.about.description}
+        customClassName='bg-second-light dark:bg-second-dark'
+      >
+        <LinkAppearanceButton href={dictionary.about.githubLink} isBlank>
+          {dictionary.about.githubText}
+        </LinkAppearanceButton>
+      </TitlePage>
+
       <SectionPanelDetail
         dictionary={infraDictionary}
         sections={infraSections}
