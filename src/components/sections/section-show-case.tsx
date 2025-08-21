@@ -1,3 +1,5 @@
+import { TitleToSection } from '../title/title-section';
+
 export type SectionShowCasePropsType = {
   dictionary: {
     title: string;
@@ -19,12 +21,12 @@ export const SectionShowCase = ({
   customClassName = '',
 }: SectionShowCasePropsType) => (
   <section className={`${customClassName} pb-8`}>
-    <h2>{dictionary.title}</h2>
-    <p
-      className='text-center'
-      dangerouslySetInnerHTML={{ __html: dictionary.description }}
+    <TitleToSection
+      title={dictionary.title}
+      description={dictionary.description}
     />
-    <div className='my-4 flex flex-wrap justify-center gap-6'>
+
+    <div className='my-4 flex flex-wrap justify-center gap-6 px-4'>
       {Object.keys(dictionary.sections).map((key) => {
         const section = dictionary.sections[key];
         return (
@@ -54,7 +56,7 @@ export const SectionShowCaseItem = ({
   imgSrc,
   icon,
 }: SectionShowCaseItemPropsType) => (
-  <div className='h-48 max-w-lg rounded-lg bg-card-bg p-6 shadow-lg dark:bg-card-bg-dark'>
+  <div className='shadow-disableLight dark:shadow-disableDark h-48 max-w-lg rounded-xl bg-card-bg p-4 shadow-md dark:bg-card-bg-dark'>
     <h3>
       <span>
         <img src={icon} alt={title} className='mr-2 inline-block w-11' />

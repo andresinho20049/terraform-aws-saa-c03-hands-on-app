@@ -17,8 +17,10 @@ export const HeroSeeMore = ({
   imgSrc,
   customClassName = '',
 }: HeroSeeMorePropsType) => (
-  <section className={`flex h-screen flex-wrap 2xl:px-20 ${customClassName}`}>
-    <div className='flex h-full w-full flex-col justify-between lg:w-8/12'>
+  <section
+    className={`flex min-h-screen flex-wrap 2xl:h-screen 2xl:px-20 ${customClassName}`}
+  >
+    <div className='flex h-full w-full flex-col justify-between py-20 lg:w-8/12 lg:py-4'>
       <section className='flex items-center justify-between px-4'>
         <div className='size-28 landscape:size-12 landscape:lg:size-28'>
           <img

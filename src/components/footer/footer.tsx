@@ -13,7 +13,7 @@ export type FooterComponentPropsType = {
     pages: {
       home: string;
       about: string;
-      contact: string;
+      resource: string;
     };
     footer: {
       section: {

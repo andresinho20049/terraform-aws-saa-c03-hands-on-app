@@ -1,3 +1,4 @@
+import { TitlePage } from '../title/title-page';
 import { LinkAppearanceButton } from '../ui/link-appearance-button';
 
 export type HeroSectionPropsType = {
@@ -22,30 +23,28 @@ export const HeroSection = ({
   customClassName = '',
 }: HeroSectionPropsType) => (
   <div
-    className={`flex h-screen items-center justify-center ${customClassName}`}
+    className={`flex min-h-screen items-center justify-center ${customClassName}`}
   >
-    <div className='mx-10 max-w-6xl text-center'>
+    <div className='mx-10 max-w-6xl px-4 text-center'>
       <p className='caption text-center'>{subtitle}</p>
-      <h1 className='my-3'>{title}</h1>
-      <div>
-        <p className='mx-auto my-2 max-w-2xl'>{description}</p>
-      </div>
-      <div className='mt-6 flex flex-col items-center justify-center gap-5 md:flex-row'>
-        <LinkAppearanceButton
-          href={buttonPrimaryLink}
-          isBlank={buttonPrimaryLink.startsWith('http')}
-          isPrimary
-        >
-          {buttonPrimaryText}
-        </LinkAppearanceButton>
-        <LinkAppearanceButton
-          href={buttonSecondaryLink}
-          isBlank={buttonSecondaryLink.startsWith('http')}
-          isPrimary={false}
-        >
-          {buttonSecondaryText}
-        </LinkAppearanceButton>
-      </div>
+      <TitlePage title={title} description={description}>
+        <div className='mt-6 flex items-center justify-center gap-2 lg:gap-4'>
+          <LinkAppearanceButton
+            href={buttonPrimaryLink}
+            isBlank={buttonPrimaryLink.startsWith('http')}
+            isPrimary
+          >
+            {buttonPrimaryText}
+          </LinkAppearanceButton>
+          <LinkAppearanceButton
+            href={buttonSecondaryLink}
+            isBlank={buttonSecondaryLink.startsWith('http')}
+            isPrimary={false}
+          >
+            {buttonSecondaryText}
+          </LinkAppearanceButton>
+        </div>
+      </TitlePage>
     </div>
   </div>
 );

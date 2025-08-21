@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import Link, { LinkProps } from 'next/link';
 
-type LinkAppearanceButtonPropsType = LinkProps & {
+export type LinkAppearanceButtonPropsType = LinkProps & {
   href: string;
   isBlank?: boolean;
   isPrimary?: boolean;

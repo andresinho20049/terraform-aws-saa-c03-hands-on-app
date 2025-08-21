@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { TitleToSection } from '../title/title-section';
 export type SectionPanelDetailPropsType = {
   align: 'left' | 'right';
   sections: string[];
@@ -30,13 +31,15 @@ export const SectionPanelDetail = ({
   return (
     <section className={customClassName}>
       <div className='mx-auto max-w-7xl py-8'>
-        <h2 className='mb-4 text-center'>{dictionary.title}</h2>
-        <p className='text-center'>{dictionary.description}</p>
+        <TitleToSection
+          title={dictionary.title}
+          description={dictionary.description}
+        />
 
         <div
-          className={`flex w-full justify-between gap-4 ${align === 'left' ? 'flex-row' : 'flex-row-reverse'} mt-6`}
+          className={`flex w-full flex-col justify-between gap-4 ${align === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} mt-6 px-4`}
         >
-          <div className='flex w-full flex-col items-stretch space-y-4 md:w-1/3'>
+          <div className='flex w-full flex-wrap justify-between gap-2 md:w-1/3 md:flex-col md:items-stretch'>
             {sections.map((section) => (
               <SectionPanelDetailButton
                 key={section}
@@ -88,7 +91,7 @@ const SectionPanelDetailButton = ({
 }: SectionPanelDetailButtonPropsType) => (
   <button
     onClick={onClick}
-    className='bg-card-bg p-4 shadow-lg transition-colors duration-300 hover:rounded-lg hover:bg-second-light dark:bg-card-bg-dark hover:dark:bg-second-dark'
+    className='w-5/12 bg-card-bg p-4 shadow-lg transition-colors duration-300 hover:rounded-lg hover:bg-second-light dark:bg-card-bg-dark hover:dark:bg-second-dark md:w-full'
   >
     <div className='flex flex-col items-center'>
       <img src={icon} alt={title} className='h-12' />

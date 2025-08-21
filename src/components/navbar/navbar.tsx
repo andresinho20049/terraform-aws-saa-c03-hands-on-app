@@ -15,7 +15,7 @@ export type NavBarPropsType = {
     pages: {
       home: string;
       about: string;
-      contact: string;
+      resource: string;
     };
     lang_switcher: {
       label: string;
