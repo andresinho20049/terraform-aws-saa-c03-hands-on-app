@@ -1,7 +1,3 @@
-import { generateStaticParams } from '@/my-app/hooks/use-languages';
-import { PageProps } from '../layout';
-import { getDictionary } from '../../dictionaries';
-import { CardImageWithTitle } from '@/my-app/components/card/card-image-with-title';
 import {
   WaveDiviver,
   WaveDiviverInvert,
@@ -9,6 +5,9 @@ import {
 import { SectionIntroduceToLink } from '@/my-app/components/sections/section-introduce-to-link';
 import { TitlePage } from '@/my-app/components/title/title-page';
 import { TitleToSection } from '@/my-app/components/title/title-section';
+import { generateStaticParams } from '@/my-app/hooks/use-languages';
+import { getDictionary } from '../../dictionaries';
+import { PageProps } from '../layout';
 
 export { generateStaticParams };
 

@@ -31,6 +31,10 @@ export const getCurrentLanguage = (path: string): LanguageType => {
   return getLanguageFromPath(path) || getDefaultLanguage();
 };
 
-export const generateStaticParams = async () => {
+export type ParamsLanguageType = {
+  lang: LanguageType;
+};
+
+export const generateStaticParams = async (): Promise<ParamsLanguageType[]> => {
   return availableLanguages.map((lang) => ({ lang }));
 };

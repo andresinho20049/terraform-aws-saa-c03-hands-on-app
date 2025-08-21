@@ -1,29 +1,27 @@
+import { FooterComponent } from '@/my-app/components/footer/footer';
+import { NavBar } from '@/my-app/components/navbar/navbar';
+import { getDictionary } from '../dictionaries';
+
 import {
   generateStaticParams,
-  LanguageType,
+  ParamsLanguageType,
 } from '@/my-app/hooks/use-languages';
-import { getDictionary } from '../dictionaries';
-import { NavBar } from '@/my-app/components/navbar/navbar';
-import { FooterComponent } from '@/my-app/components/footer/footer';
-
 export { generateStaticParams };
 
 export type PageProps = {
-  params: {
-    lang: LanguageType;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
-  children?: React.ReactNode;
-  dictionary?: { [key: string]: string };
-  lang?: LanguageType;
-  locale?: string;
-  defaultLocale?: string;
-  asPath?: string;
-  basePath?: string;
-  isFallback?: boolean;
+  params: Promise<ParamsLanguageType>;
+  searchParams?: Promise<{ [key: string]: string }>;
 };
 
-export default async function LanguageLayout({ children, params }: PageProps) {
+export type LayoutProps = {
+  children: React.ReactNode;
+  params: Promise<ParamsLanguageType>;
+};
+
+export default async function LanguageLayout({
+  children,
+  params,
+}: LayoutProps) {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
 

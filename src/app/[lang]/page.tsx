@@ -1,12 +1,12 @@
-import { HeroSection } from '@/my-app/components/hero/hero-section';
-import { generateStaticParams } from '@/my-app/hooks/use-languages';
-import { getDictionary } from '../dictionaries';
-import { PageProps } from './layout';
 import {
   WaveDiviver,
   WaveDiviverInvert,
 } from '@/my-app/components/dividers/wave-divider';
+import { HeroSection } from '@/my-app/components/hero/hero-section';
 import { HeroSeeMore } from '@/my-app/components/hero/hero-see-more';
+import { generateStaticParams } from '@/my-app/hooks/use-languages';
+import { getDictionary } from '../dictionaries';
+import { PageProps } from './layout';
 
 export { generateStaticParams };
 
