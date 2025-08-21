@@ -15,14 +15,14 @@
   "home": {
     "title": "Welcome to My Website!",
     "subtitle": "Infrastructure as Code with Terraform",
-    "description": "This is a hands-on project for the AWS Solutions Architect - Associate certification.",
+    "description": "This is a hands-on project for the AWS Solutions Architect certification.",
     "buttonPrimaryText": "I want to meet you",
     "buttonPrimaryLink": "https://github.com/andresinho20049",
     "buttonSecondaryText": "About the Project",
     "buttonSecondaryLink": "en/about",
     "seeMore": {
       "title": "AWS SAA-C03 Hands-On",
-      "description": "This project demonstrates a <strong>Cloud-Native</strong> architecture for <span>static web applications</span>. It uses <span>Next.js</span>, not in its default SSR configuration, but in <span>static export</span> mode, ensuring that all components and pages are pre-generated as HTML, CSS, and JavaScript files. This strategy eliminates the need for an application server, allowing the solution to be hosted in an <span>S3 bucket</span> in a purely <strong>serverless</strong> manner.<br/><br/>The infrastructure is provisioned automatically via <span>Terraform (IaC)</span>, which configures <span>S3</span>, <span>CloudFront (CDN)</span>, and <span>Origin Access Control (OAC)</span> to ensure security and performance. The <span>CI/CD</span> pipeline is managed by <strong>GitHub Actions</strong>. With each push, the workflow executes Terraform, builds Next.js, syncs static files with S3, and invalidates the CloudFront cache. The result is a continuous delivery system that ensures fast and secure deployments. The application is served globally through CloudFront, offering low latency and high scalability, with files protected and accessible only via OAC.",
+      "description": "This project demonstrates a <strong>Cloud-Native</strong> architecture for <span>static web</span> applications. It uses <span>Next.js</span>, not in its default SSR configuration, but in <span>static export</span> mode, ensuring that all components and pages are pre-generated as HTML, CSS, and JavaScript files. This strategy eliminates the need for an application server, allowing the solution to be hosted in an <span>S3 bucket</span> in a purely <strong>serverless</strong> manner.<br/><br/>The infrastructure is provisioned automatically via <span>Terraform (IaC)</span>, which configures <span>S3</span>, <span>CloudFront (CDN)</span>, and <span>Origin Access Control (OAC)</span> to ensure security and performance. The <span>CI/CD</span> pipeline is managed by <strong>GitHub Actions</strong>. With each push, the workflow executes Terraform, builds Next.js, syncs static files with S3, and invalidates the CloudFront cache. The result is a continuous delivery system that ensures fast and secure deployments. The application is served globally through CloudFront, offering low latency and high scalability, with files protected and accessible only via OAC.",
       "buttonText": "See on GitHub",
       "buttonLink": "https://github.com/andresinho20049/terraform-aws-saa-c03-hands-on-app",
       "imgSrc": "/diagram/terraform-aws-saa-c03-hands-on-app-Page-1.drawio.svg"
@@ -30,9 +30,46 @@
   },
   "about": {
     "title": "About the Project",
-    "description": "This project is a practical demonstration for the <strong>AWS Solutions Architect - Associate (SAA-C03)</strong> certification.\n\n It uses Terraform to provision and manage a static website on AWS, using services such as S3 and CloudFront, which guarantee high scalability and low cost without the need to manage servers.",
+    "description": "This project is a practical demonstration for the <strong>AWS Solutions Architect - Associate (SAA-C03)</strong> certification.\n It uses Terraform to provision and manage a static website on AWS, using services such as S3 and CloudFront, which guarantee high scalability and low cost without the need to manage servers.",
     "githubText": "See on GitHub",
     "githubLink": "https://github.com/andresinho20049/terraform-aws-saa-c03-hands-on-app"
+  },
+  "resource": {
+    "title": "Continuous Delivery Pipeline<br/> for Static Sites",
+    "description": "Boost your development process efficiency with a complete end-to-end automation. Our pipeline was meticulously designed to transform a <strong>Next.js</strong> project's source code into a static site and then deploy it to <strong>AWS</strong>. The process is fully automated using <strong>GitHub Actions</strong>, which manages every step, from the <strong>build</strong> to the <strong>infrastructure provisioning</strong> with <strong>Terraform</strong>, ensuring changes are published quickly and with zero manual intervention. This approach not only enhances delivery speed but also maintains consistency and security in every deployment.",
+    "imgSrc": "/diagram/terraform-aws-saa-c03-hands-on-app-Page-2.drawio.svg",
+    "subtitle": "Explore Other Resources",
+    "descriptionResources": "Welcome to my learning journey for the <strong>AWS Certified Solutions Architect</strong> certification.<br/><br/> This section features a portfolio of technical projects that go beyond theory, tackling real-world practical challenges.<br/>Each project uses <strong>Terraform</strong> to provision and manage infrastructure, reinforcing best practices for Infrastructure as Code <strong>(IaC)</strong>.<br/> You'll see examples of how I've provisioned a variety of architectures, from <strong>serverless</strong> solutions, which eliminate the need for server management, to <strong>provisioned architectures</strong> that use services like <strong>VPC, EC2, EFS, and Application Load Balancer</strong> to ensure high availability and resilience.<br/><br/>These works are a tangible demonstration of my skills in cloud solution design, implementation, and automation, serving as a practical foundation for the certification.",
+    "resourcesList": [
+      {
+        "title": "AWS Infrastructure with Terraform",
+        "description": "This project is a hands-on lab that uses <strong>Terraform, Packer, and Shell Script</strong> to automate the creation of a scalable and secure AWS infrastructure. It simulates a web application in distinct environments <strong>(dev, prod)</strong>, with a Load Balancer and Autoscaling.\n\n The project highlights the creation of custom AMIs, VPCs, Load Balancers, and autoscaling groups, validating technical skills in cloud automation and architecture.",
+        "cardTitle": "VPC, ALB, ASG, and EFS",
+        "imgSrc": "/diagram/terraform-aws-with-autoscaling-course.drawio.svg",
+        "link": "https://github.com/andresinho20049/terraform-aws-with-autoscaling-course"
+      },
+      {
+        "title": "Terraform and GitHub Actions",
+        "description": "This project offers a robust solution for managing and provisioning infrastructure on Amazon Web Services (AWS) using <strong>Terraform</strong>, with an automated <strong>Continuous Integration/Continuous Deployment (CI/CD)</strong> pipeline via GitHub Actions.",
+        "cardTitle": "Github Actions",
+        "imgSrc": "/diagram/terraform-pipeline-with-github-actions.drawio.svg",
+        "link": "https://github.com/andresinho20049/terraform-pipeline-with-github-actions"
+      },
+      {
+        "title": "Lovable + AWS Amplify (VFS Castanhas)",
+        "description": "The <strong>VFS Castanhas</strong> project is a practical study of <strong>serverless</strong> architecture on AWS. Developed with the <strong>AWS Amplify CLI</strong>, it demonstrates the building of a complete application, which includes a <strong>landing page with a chatbot</strong> and a restricted access console. The solution integrates services like <strong>API Gateway, Lambda, and DynamoDB</strong>, in addition to using <strong>Amazon Bedrock</strong> for <strong>AI</strong> functionalities. <strong>User and group management</strong> is handled via <strong>Cognito</strong>, allowing for secure and integrated authentication with external providers like Google.",
+        "cardTitle": "AWS Amplify",
+        "imgSrc": "/diagram/vfs-castanhas-landing-page.drawio.png",
+        "link": "https://github.com/andresinho20049/vfs-castanhas-landing-page"
+      },
+      {
+        "title": "ECS (Fargate)",
+        "description": "This project is a practical study of infrastructure as code with a focus on <strong>microservices and containers</strong> on AWS. It uses <strong>Terraform</strong> to provision a complete and scalable architecture with <strong>ECS (Elastic Container Service)</strong>. The project includes a high-availability cluster, services with their own task definitions, and the use of <strong>ECR (Elastic Container Registry)</strong> to manage container images, as well as <strong>Application Load Balancers (ALBs)</strong> for traffic distribution.",
+        "cardTitle": "ECS (Fargate)",
+        "imgSrc": "/diagram/iac-aws-ecs-with-terraform.drawio.svg",
+        "link": "https://github.com/andresinho20049/iac-aws-ecs-with-terraform"
+      }
+    ]
   },
   "lang_switcher": {
     "label": "Language",
