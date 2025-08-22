@@ -22,10 +22,10 @@ export const HeroSection = ({
   buttonSecondaryLink,
   customClassName = '',
 }: HeroSectionPropsType) => (
-  <div
+  <section
     className={`flex min-h-screen items-center justify-center ${customClassName}`}
   >
-    <div className='mx-10 max-w-6xl px-4 text-center'>
+    <div className='mx-10 max-w-6xl text-center'>
       <p className='caption text-center'>{subtitle}</p>
       <TitlePage title={title} description={description}>
         <div className='mt-6 flex items-center justify-center gap-2 lg:gap-4'>
@@ -46,5 +46,5 @@ export const HeroSection = ({
         </div>
       </TitlePage>
     </div>
-  </div>
+  </section>
 );

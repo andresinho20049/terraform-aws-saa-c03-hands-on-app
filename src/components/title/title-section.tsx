@@ -11,11 +11,11 @@ export const TitleToSection = ({
   customClassName = '',
   children,
 }: TitleToSectionPropsType) => (
-  <div
-    className={`title-section mx-auto flex flex-col items-center justify-center space-y-4 px-4 ${customClassName}`}
+  <section
+    className={`title-section mx-auto flex flex-col items-center justify-center space-y-4 ${customClassName}`}
   >
     <h2 dangerouslySetInnerHTML={{ __html: title }} />
     <p dangerouslySetInnerHTML={{ __html: description }} />
     {children}
-  </div>
+  </section>
 );

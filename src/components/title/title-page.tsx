@@ -11,11 +11,11 @@ export const TitlePage = ({
   customClassName = '',
   children,
 }: TitlePagePropsType) => (
-  <div
-    className={`title-section mx-auto flex flex-col items-center space-y-4 px-4 pb-12 ${customClassName}`}
+  <section
+    className={`title-section mx-auto flex flex-col items-center space-y-4 pb-12 ${customClassName}`}
   >
     <h1 dangerouslySetInnerHTML={{ __html: title }} />
     <p dangerouslySetInnerHTML={{ __html: description }} />
     {children}
-  </div>
+  </section>
 );

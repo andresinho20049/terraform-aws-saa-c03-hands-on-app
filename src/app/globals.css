@@ -10,16 +10,16 @@
     @apply bg-gradient-to-tr from-primary to-accent bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent lg:text-6xl;
   }
   h2 {
-    @apply text-alternativeLight dark:text-alternativeDark text-balance text-center text-2xl font-semibold tracking-normal lg:text-5xl;
+    @apply text-balance text-center text-3xl font-semibold tracking-normal text-alternativeLight dark:text-alternativeDark lg:text-5xl;
   }
   h3 {
-    @apply text-commonLight dark:text-commonDark text-balance text-start text-xl font-medium tracking-normal underline lg:text-2xl;
+    @apply text-balance text-start text-xl font-medium tracking-normal text-commonLight underline dark:text-commonDark lg:text-2xl;
   }
   p {
-    @apply text-commonLight dark:text-commonDark whitespace-pre-line text-balance text-justify text-base/relaxed font-normal tracking-normal;
+    @apply whitespace-pre-line text-balance text-justify text-base/relaxed font-normal tracking-normal text-commonLight dark:text-commonDark;
   }
   span {
-    @apply text-commonLight dark:text-commonDark text-base/relaxed font-light tracking-normal;
+    @apply text-base/relaxed font-light tracking-normal text-commonLight dark:text-commonDark;
   }
   strong {
     @apply text-base/loose font-semibold tracking-wider text-primary;
@@ -27,19 +27,22 @@
   a {
     @apply select-none text-base/normal font-medium tracking-normal text-accent no-underline decoration-accent hover:text-primary hover:underline dark:text-accent;
   }
+  section {
+    @apply px-4;
+  }
 }
 
 @layer components {
   .caption {
-    @apply text-disableLight dark:text-disableDark my-3 text-sm font-bold uppercase tracking-widest;
+    @apply my-3 text-sm font-bold uppercase tracking-widest text-disableLight dark:text-disableDark;
   }
 
   .primary-button {
-    @apply text-commonDark dark:text-commonDark border-x-primaryDisable dark:border-x-primaryDisable dark:bg-primaryDark hover:border-y-primaryDisable dark:hover:border-y-primaryDisable hover:text-primaryDisable dark:hover:text-primaryDisable inline-block w-auto min-w-48 select-none rounded-md border-4 border-y-primary bg-primary px-6 py-4 text-center no-underline transition-all hover:-translate-y-px hover:no-underline dark:border-y-primary dark:no-underline dark:hover:no-underline;
+    @apply inline-block w-auto min-w-48 select-none rounded-md border-4 border-x-primaryDisable border-y-primary bg-primary px-6 py-4 text-center text-commonDark no-underline transition-all hover:-translate-y-px hover:border-y-primaryDisable hover:text-primaryDisable hover:no-underline dark:border-x-primaryDisable dark:border-y-primary dark:bg-primaryDark dark:text-commonDark dark:no-underline dark:hover:border-y-primaryDisable dark:hover:text-primaryDisable dark:hover:no-underline;
   }
 
   .secondary-button {
-    @apply bg-alternativeDark border-alternativeLight text-alternativeLight shadow-commonLight hover:bg-commonDark hover:border-commonLight hover:text-commonLight hover:shadow-alternativeLight dark:bg-commonLight dark:border-alternativeDark dark:text-alternativeDark dark:shadow-commonDark dark:hover:bg-alternativeLight dark:hover:border-commonDark dark:hover:text-commonDark dark:hover:shadow-alternativeDark inline-block w-auto min-w-48 select-none rounded-md border bg-transparent px-6 py-4 text-center no-underline shadow-sm transition-all hover:no-underline hover:shadow-md dark:shadow-sm dark:hover:shadow-md;
+    @apply inline-block w-auto min-w-48 select-none rounded-md border border-alternativeLight bg-alternativeDark bg-transparent px-6 py-4 text-center text-alternativeLight no-underline shadow-sm shadow-commonLight transition-all hover:border-commonLight hover:bg-commonDark hover:text-commonLight hover:no-underline hover:shadow-md hover:shadow-alternativeLight dark:border-alternativeDark dark:bg-commonLight dark:text-alternativeDark dark:shadow-sm dark:shadow-commonDark dark:hover:border-commonDark dark:hover:bg-alternativeLight dark:hover:text-commonDark dark:hover:shadow-md dark:hover:shadow-alternativeDark;
   }
 
   .card-button {
@@ -51,23 +54,27 @@
   }
 
   .title-section p {
-    @apply text-commonLight dark:text-commonDark max-w-7xl text-balance pb-8 text-center text-lg/relaxed font-normal tracking-normal;
+    @apply max-w-7xl text-balance pb-8 text-center text-lg/relaxed font-normal tracking-normal text-commonLight dark:text-commonDark;
   }
 
   .title-section span {
-    @apply text-commonLight dark:text-commonDark text-lg/relaxed font-light tracking-normal underline decoration-accent hover:text-accent hover:underline;
+    @apply text-lg/relaxed font-light tracking-normal text-commonLight underline decoration-accent hover:text-accent hover:underline dark:text-commonDark;
   }
 
   .title-section strong {
     @apply text-lg/loose font-semibold tracking-wider text-primary;
   }
 
+  .inverter-bg {
+    @apply bg-second-light dark:bg-second-dark;
+  }
+
   .resume p {
-    @apply text-commonLight dark:text-commonDark max-w-7xl text-base/relaxed font-normal tracking-normal;
+    @apply max-w-7xl text-base/relaxed font-normal tracking-normal text-commonLight dark:text-commonDark;
   }
 
   .resume span {
-    @apply text-commonLight dark:text-commonDark text-base/relaxed font-light tracking-normal underline decoration-accent hover:text-accent hover:underline;
+    @apply text-base/relaxed font-light tracking-normal text-commonLight underline decoration-accent hover:text-accent hover:underline dark:text-commonDark;
   }
 }
 

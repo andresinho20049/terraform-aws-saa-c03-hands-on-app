@@ -8,34 +8,46 @@ import { TitleToSection } from '@/my-app/components/title/title-section';
 import { generateStaticParams } from '@/my-app/hooks/use-languages';
 import { getDictionary } from '../../dictionaries';
 import { PageProps } from '../layout';
+import { CardPreview } from '@/my-app/components/card/card-preview';
+import { SectionContentPreview } from '@/my-app/components/sections/section-content-preview';
+import { SectionShowCase } from '@/my-app/components/sections/section-show-case';
+import { SectionConclusion } from '@/my-app/components/sections/section-conclusion';
 
 export { generateStaticParams };
 
 export default async function ResourcePage({ params }: PageProps) {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
+
+  const {
+    title,
+    subtitle,
+    description,
+    imgSrc,
+    descriptionResources,
+    resourcesList,
+    contentPreview,
+    conclusion,
+  } = dictionary.resource;
+
   return (
     <main className='min-h-screen w-full'>
       <TitlePage
-        title={dictionary.resource.title}
-        description={dictionary.resource.description}
+        title={title}
+        description={description}
         customClassName='pt-20'
       >
-        <img
-          src={dictionary.resource.imgSrc}
-          alt={dictionary.resource.title}
-          className='w-full max-w-3xl'
-        />
+        <img src={imgSrc} alt={title} className='w-full max-w-3xl' />
       </TitlePage>
       <WaveDiviverInvert />
       <TitleToSection
-        title={dictionary.resource.subtitle}
-        description={dictionary.resource.descriptionResources}
-        customClassName='bg-second-light dark:bg-second-dark'
+        title={subtitle}
+        description={descriptionResources}
+        customClassName='inverter-bg'
       />
 
-      <div className='w-full divide-y-2 bg-second-light px-4 dark:bg-second-dark lg:px-20'>
-        {dictionary.resource.resourcesList.map((resource) => (
+      <div className='inverter-bg w-full divide-y-2 lg:px-20'>
+        {resourcesList.map((resource) => (
           <SectionIntroduceToLink
             title={resource.title}
             description={resource.description}
@@ -48,6 +60,15 @@ export default async function ResourcePage({ params }: PageProps) {
           />
         ))}
       </div>
+      <WaveDiviver />
+      <SectionContentPreview dictionary={contentPreview} />
+      <div className='h-8 md:h-24'></div>
+      <WaveDiviverInvert />
+      <SectionConclusion
+        customClassName='inverter-bg'
+        dictionary={conclusion}
+      />
+      <div className='inverter-bg h-8 md:h-24'></div>
       <WaveDiviver />
     </main>
   );

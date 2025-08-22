@@ -21,7 +21,7 @@ export const HeroSeeMore = ({
     className={`flex min-h-screen flex-wrap 2xl:h-screen 2xl:px-20 ${customClassName}`}
   >
     <div className='flex h-full w-full flex-col justify-between py-20 lg:w-8/12 lg:py-4'>
-      <section className='flex items-center justify-between px-4'>
+      <div className='flex items-center justify-between'>
         <div className='size-28 landscape:size-12 landscape:lg:size-28'>
           <img
             alt='Andresinho20049'
@@ -29,8 +29,8 @@ export const HeroSeeMore = ({
             className='w-24'
           />
         </div>
-      </section>
-      <section className='flex h-full items-center px-4 lg:mt-0'>
+      </div>
+      <div className='flex h-full items-center lg:mt-0'>
         <div className='w-full'>
           <h2 className='text-left'>{title}</h2>
           <div className='my-4 h-2 w-36 bg-primary'></div>
@@ -50,9 +50,9 @@ export const HeroSeeMore = ({
             )}
           </div>
         </div>
-      </section>
+      </div>
     </div>
-    <div className='hidden h-full w-4/12 items-center px-4 lg:flex'>
+    <div className='hidden h-full w-4/12 items-center lg:flex'>
       <img
         src={imgSrc}
         alt='Ilustrate Image'

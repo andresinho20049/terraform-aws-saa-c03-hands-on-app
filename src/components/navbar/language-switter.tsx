@@ -47,7 +47,7 @@ export default function LanguageSwitcher({
           </span>
         </div>
 
-        <div className='absolute z-50 hidden w-full flex-col bg-second-light px-4 py-1 shadow-xl group-hover:flex dark:bg-second-dark'>
+        <div className='absolute z-50 hidden w-full flex-col bg-second-light py-1 shadow-xl group-hover:flex dark:bg-second-dark'>
           <LinkLanguage
             href={pathname}
             lang='pt'

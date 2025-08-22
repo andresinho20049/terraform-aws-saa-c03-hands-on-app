@@ -1,3 +1,4 @@
+import { CardSimple } from '../card/card-simple';
 import { TitleToSection } from '../title/title-section';
 
 export type SectionShowCasePropsType = {
@@ -8,7 +9,6 @@ export type SectionShowCasePropsType = {
       [key: string]: {
         title: string;
         description: string;
-        imgSrc: string;
         icon: string;
       };
     };
@@ -26,43 +26,18 @@ export const SectionShowCase = ({
       description={dictionary.description}
     />
 
-    <div className='my-4 flex flex-wrap justify-center gap-6 px-4'>
+    <div className='my-4 flex flex-wrap justify-center gap-6'>
       {Object.keys(dictionary.sections).map((key) => {
         const section = dictionary.sections[key];
         return (
-          <SectionShowCaseItem
+          <CardSimple
             key={key}
             title={section.title}
             description={section.description}
-            imgSrc={section.imgSrc}
             icon={section.icon}
           />
         );
       })}
     </div>
   </section>
-);
-
-type SectionShowCaseItemPropsType = {
-  title: string;
-  description: string;
-  imgSrc: string;
-  icon: string;
-};
-
-export const SectionShowCaseItem = ({
-  title,
-  description,
-  imgSrc,
-  icon,
-}: SectionShowCaseItemPropsType) => (
-  <div className='h-48 max-w-lg rounded-xl bg-card-bg p-4 shadow-md shadow-disableLight dark:bg-card-bg-dark dark:shadow-disableDark'>
-    <h3>
-      <span>
-        <img src={icon} alt={title} className='mr-2 inline-block w-11' />
-      </span>
-      {title}
-    </h3>
-    <p dangerouslySetInnerHTML={{ __html: description }} />
-  </div>
 );

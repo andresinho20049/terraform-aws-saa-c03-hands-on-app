@@ -31,8 +31,8 @@ export default async function Home({ params }: PageProps) {
         description={dictionary.home.seeMore.description}
         buttonText={dictionary.home.seeMore.buttonText}
         buttonLink={dictionary.home.seeMore.buttonLink}
-        customClassName='bg-second-light dark:bg-second-dark'
         imgSrc={dictionary.home.seeMore.imgSrc}
+        customClassName='inverter-bg'
       />
       <WaveDiviver />
     </main>

@@ -5,7 +5,7 @@ const customColors = {
   ...defaultColors,
   ...{
     primary: defaultColors.blue[700],
-    primaryDark: defaultColors.blueGray[900],
+    primaryDark: defaultColors.blue[950],
     second: defaultColors.purple[800],
     accent: defaultColors.cyan[500],
     commonLight: defaultColors.stone[900],

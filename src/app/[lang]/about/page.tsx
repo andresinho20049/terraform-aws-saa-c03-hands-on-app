@@ -23,7 +23,6 @@ export default async function AboutPage({ params }: PageProps) {
   const ciSections = Object.keys(ciDictionary.sections);
 
   const adDictionary = dictionary.sections_details.advantages;
-  const adSections = Object.keys(adDictionary.sections);
 
   return (
     <main>
@@ -31,7 +30,7 @@ export default async function AboutPage({ params }: PageProps) {
       <TitlePage
         title={dictionary.about.title}
         description={dictionary.about.description}
-        customClassName='bg-second-light dark:bg-second-dark'
+        customClassName='inverter-bg'
       >
         <LinkAppearanceButton href={dictionary.about.githubLink} isBlank>
           {dictionary.about.githubText}
@@ -42,7 +41,7 @@ export default async function AboutPage({ params }: PageProps) {
         dictionary={infraDictionary}
         sections={infraSections}
         align='left'
-        customClassName='bg-second-light dark:bg-second-dark'
+        customClassName='inverter-bg'
       />
       <WaveDiviver />
       <SectionPanelDetail
@@ -53,7 +52,7 @@ export default async function AboutPage({ params }: PageProps) {
       <WaveDiviverInvert />
       <SectionShowCase
         dictionary={adDictionary}
-        customClassName='bg-second-light dark:bg-second-dark'
+        customClassName='inverter-bg'
       />
       <WaveDiviver />
     </main>

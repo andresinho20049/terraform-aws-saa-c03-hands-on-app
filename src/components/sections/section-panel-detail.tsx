@@ -37,7 +37,7 @@ export const SectionPanelDetail = ({
         />
 
         <div
-          className={`flex w-full flex-col justify-between gap-4 ${align === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} mt-6 px-4`}
+          className={`flex w-full flex-col justify-between gap-4 ${align === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} mt-6`}
         >
           <div className='flex w-full flex-wrap justify-between gap-2 md:w-1/3 md:flex-col md:items-stretch'>
             {sections.map((section) => (

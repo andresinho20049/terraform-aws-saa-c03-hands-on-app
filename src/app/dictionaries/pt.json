@@ -16,7 +16,7 @@
     "title": "Bem-vindo ao Meu Site!",
     "subtitle": "Infraestrutura como Código com Terraform",
     "description": "Este é um projeto prático para a certificação AWS Solutions Architect.",
-    "buttonPrimaryText": "Quero conhecê-lo",
+    "buttonPrimaryText": "Conhecer-me",
     "buttonPrimaryLink": "https://github.com/andresinho20049",
     "buttonSecondaryText": "Sobre o Projeto",
     "buttonSecondaryLink": "pt/about",
@@ -39,7 +39,7 @@
     "description": "Aumente a eficiência do seu processo de desenvolvimento com uma automação completa de ponta a ponta. Nosso pipeline foi meticulosamente projetado para transformar o código-fonte de um projeto <strong>Next.js</strong> em um site estático e, em seguida, implantá-lo na <strong>AWS</strong>. O processo é totalmente automatizado usando <strong>GitHub Actions</strong>, que gerencia cada passo, desde o <strong>build</strong> até a <strong>provisão da infraestrutura</strong> com <strong>Terraform</strong>, garantindo que as mudanças sejam publicadas rapidamente e com zero intervenção manual. Essa abordagem não apenas melhora a velocidade de entrega, mas também mantém a consistência e a segurança em cada implantação.",
     "imgSrc": "/diagram/terraform-aws-saa-c03-hands-on-app-Page-2.drawio.svg",
     "subtitle": "Explore Outros Recursos",
-    "descriptionResources": "Bem-vindo à minha jornada de aprendizado para a certificação <strong>AWS Certified Solutions Architect</strong>.<br/><br/> Esta seção apresenta um portfólio de projetos técnicos que vão além da teoria, abordando desafios práticos do mundo real.<br/>Cada projeto utiliza <strong>Terraform</strong> para provisionar e gerenciar infraestrutura, reforçando as melhores práticas de infraestrutura como código <strong>(IaC)</strong>.<br/> Você verá exemplos de como provisionei uma variedade de arquiteturas, desde soluções <strong>serverless</strong>, que eliminam a necessidade de gerenciar servidores, até <strong>arquiteturas provisionadas</strong> que utilizam serviços como <strong>VPC, EC2, EFS e Application Load Balancer</strong> para garantir alta disponibilidade e resiliência.<br/><br/>Esses trabalhos são uma demonstração tangível das minhas habilidades em design, implementação e automação de soluções na nuvem, servindo como uma base prática para a certificação.",
+    "descriptionResources": "Bem-vindo à minha jornada de aprendizado para a certificação <strong>AWS Certified Solutions Architect</strong>.<br/><br/> Esta seção apresenta um portfólio de projetos técnicos que vão além da teoria, abordando desafios práticos do mundo real.<br/>Cada projeto utiliza <strong>Terraform</strong> para provisionar e gerenciar infraestrutura, reforçando as melhores práticas de infraestrutura como código <strong>(IaC)</strong>.<br/> Você verá exemplos de como provisionei uma variedade de arquiteturas, desde soluções <strong>serverless</strong>, que eliminam a necessidade de gerenciar servidores, até <strong>arquiteturas provisionadas</strong> que utilizam serviços como VPC, EC2, EFS e Application Load Balancer para garantir alta disponibilidade e resiliência.<br/><br/>Esses trabalhos são uma demonstração tangível das minhas habilidades em design, implementação e automação de soluções na nuvem, servindo como uma base prática para a certificação.",
     "resourcesList": [
       {
         "title": "Infraestrutura AWS com Terraform",
@@ -57,7 +57,7 @@
       },
       {
         "title": "Lovable + AWS Amplify (VFS Castanhas)",
-        "description": "O projeto <strong>VFS Castanhas</strong> é um estudo prático de arquitetura <strong>serverless</strong> na AWS. Desenvolvido com o <strong>AWS Amplify CLI</strong>, ele demonstra a construção de uma aplicação completa, que inclui uma <strong>landing page com chatbot</strong> e um console de acesso restrito. A solução integra serviços como <strong>API Gateway, Lambda e DynamoDB</strong>, além de usar o <strong>Amazon Bedrock</strong> para funcionalidades de <strong>IA</strong>. A <strong>gestão de usuários e grupos</strong> é feita via <strong>Cognito</strong>, permitindo autenticação segura e integrada com provedores externos como o Google.",
+        "description": "O projeto VFS Castanhas é um estudo prático de arquitetura <strong>serverless</strong> na AWS. Desenvolvido com o <strong>AWS Amplify CLI</strong>, ele demonstra a construção de uma aplicação completa, que inclui uma landing page com chatbot e um console de acesso restrito. A solução integra serviços como <span>API Gateway, Lambda e DynamoDB</span>, além de usar o <strong>Amazon Bedrock</strong> para funcionalidades de <strong>IA</strong>. A gestão de usuários e grupos é feita via <span>Cognito</span>, permitindo autenticação segura e integrada com provedores externos como o Google.",
         "cardTitle": "AWS Amplify",
         "imgSrc": "/diagram/vfs-castanhas-landing-page.drawio.png",
         "link": "https://github.com/andresinho20049/vfs-castanhas-landing-page"
@@ -69,7 +69,72 @@
         "imgSrc": "/diagram/iac-aws-ecs-with-terraform.drawio.svg",
         "link": "https://github.com/andresinho20049/iac-aws-ecs-with-terraform"
       }
-    ]
+    ],
+    "contentPreview": {
+      "title": "Trilha de Estudo e Recursos",
+      "description": "Esta seção documenta a jornada de estudo e validação de conhecimentos para a certificação <strong>AWS Solutions Architect</strong>. Aqui, é possível visualizar o progresso, resultados de simulados e certificados adquiridos ao longo do processo.",
+      "contents": {
+        "certifiedAndreIacono": {
+          "title": "Trilha - AWS Solutions Architect",
+          "description": "Certificado de conclusão de curso na trilha de estudos para a certificação AWS Solutions Architect <span>SAA-C03</span>, um passo fundamental na jornada Cloud e alinhado  com as trilhas de estudo oficialmente recomendadas pelo time na plataforma Udemy.",
+          "imgSrc": "/qualifications/UC-08e1b42d-a5cf-4983-b7e1-474b67c03a4c.jpg",
+          "linkText": "Visualizar Certificado",
+          "linkUrl": "/qualifications/UC-08e1b42d-a5cf-4983-b7e1-474b67c03a4c.pdf"
+        },
+        "simulatedExamOne": {
+          "title": "Simulado de Prova 1",
+          "description": "Resultado do primeiro simulado de prova para a certificação Solutions Architect <span>SAA-C03</span>. O exame foi focado em questões que simulam cenários reais de negócio, trazendo diversos casos de uso. <br />Exame realizado na trilha de estudo da Udemy.",
+          "imgSrc": "/qualifications/SAA-C03_01.png",
+          "linkText": "Ver Resultado",
+          "linkUrl": "/qualifications/SAA-C03_01.png"
+        },
+        "simulatedExamTwo": {
+          "title": "Simulado de Prova 2",
+          "description": "Resultado do segundo simulado de prova para a certificação Solutions Architect <span>SAA-C03</span>. O exame foi realizado em trilha de estudo recomendada pela equipe para a jornada Cloud, com foco em questões que exigem um entendimento aprofundado dos serviços e arquiteturas da AWS.",
+          "imgSrc": "/qualifications/SAA-C03_02.png",
+          "linkText": "Ver Resultado",
+          "linkUrl": "/qualifications/SAA-C03_02.png"
+        },
+        "certifiedCloudPractitioner": {
+          "title": "AWS Cloud Practitioner",
+          "description": "Certificação Cloud Plactitioner que valida o conhecimento fundamental e abrangente sobre a Nuvem AWS. A certificação atesta a proficiência em quatro domínios principais: <span>Conceitos da Nuvem</span>, <span>Segurança e Conformidade</span>, <span>Tecnologia</span> e <span>Faturamento/Precificação</span>.",
+          "imgSrc": "/qualifications/LNXXN2TK9JR113SD.png",
+          "linkText": "Visualizar Certificado",
+          "linkUrl": "/qualifications/LNXXN2TK9JR113SD.pdf"
+        }
+      }
+    },
+    "conclusion": {
+      "title": "Conclusão: Resumo da Jornada de Arquitetura em Nuvem",
+      "description": "Este projeto é a materialização de uma jornada de aprendizado contínuo, aplicando teoria e prática para demonstrar proficiência em arquitetura e automação na Nuvem AWS. A solução, construída com <strong>Infraestrutura como Código</strong> e um pipeline <strong>CI/CD</strong> robusto, reflete a abordagem moderna de desenvolvimento e operações.",
+      "certification": {
+        "title": "Trilha de Estudo",
+        "description": "A jornada é complementada por um aprofundado estudo para a certificação Solutions Architect, com simulados e certificados que validam o conhecimento prático e teórico.\n\nEm complemento aos projetos práticos desenvolvidos, o estudo para a certificação <strong>AWS Solutions Architect</strong>, por meio de trilhas, consolida o conhecimento teórico. Essa combinação de aplicação direta em projetos e o acompanhamento de trilhas na plataforma Udemy  é um passo fundamental na jornada Cloud.\n\nA teoria é validada através de simulados que replicam o formato da prova, enquanto a prática é solidificada com projetos tangíveis.",
+        "cardTitle": "Estudo continuo",
+        "imgSrc": "/qualifications/UC-08e1b42d-a5cf-4983-b7e1-474b67c03a4c.jpg",
+        "mainLinkText": "Home",
+        "mainLinkUrl": "/pt",
+        "secondLinkText": "Sobre",
+        "secondLinkUrl": "/pt/about"
+      },
+      "cards": {
+        "iac_infra": {
+          "title": "Infraestrutura como Código e IaaS",
+          "description": "A base de nossa solução é o <strong>Terraform</strong>, que juntamente com o <strong>Packer</strong> e o Shell Script, permitiu o provisionamento seguro e escalável de infraestrutura, incluindo projetos com <strong>EC2, ECS Fargate</strong> e gerencimento de estado.",
+          "icon": "/icons/Terraform.svg"
+        },
+        "solucoes_modernas": {
+          "title": "Soluções Serverless e Containers",
+          "description": "Exploramos arquiteturas modernas com <strong>Next.js export</strong> para um website estático em <strong>S3/CloudFront</strong>. Paralelamente, o projeto <strong>AWS Amplify</strong> e o <strong>ECS Fargate</strong> demonstram o domínio em arquiteturas serverless e de microsserviços.",
+          "icon": "/icons/CloudFront.svg"
+        },
+        "automacao_devops": {
+          "title": "Automação e DevOps (CI/CD)",
+          "description": "A eficiência do pipeline é garantida pelo <strong>GitHub Actions</strong>, que automatiza o processo de build, validação e deploy, evidenciando o comprometimento com as práticas de <strong>DevOps e CI/CD</strong>.",
+          "icon": "/icons/GitHub-Actions.svg"
+        }
+      }
+    }
   },
   "lang_switcher": {
     "label": "Idioma",
@@ -156,19 +221,16 @@
         "cost": {
           "title": "Baixo Custo Operacional",
           "description": "<strong>Sem servidores</strong> para gerenciar, o custo é baseado no uso, otimizando os gastos com infraestrutura.",
-          "imgSrc": "",
           "icon": "/icons/manager-cost.svg"
         },
         "availability": {
           "title": "Alta Disponibilidade e Escalabilidade",
           "description": "A natureza distribuída do <strong>S3</strong> e <strong>CloudFront</strong> lida com picos de tráfego sem intervenção manual.",
-          "imgSrc": "",
           "icon": "/icons/manager-ipo.svg"
         },
         "security": {
           "title": "Segurança Aprimorada",
           "description": "O <strong>acesso direto ao S3 é bloqueado</strong>, minimizando a superfície de ataque e protegendo os dados.",
-          "imgSrc": "",
           "icon": "/icons/manager-dash.svg"
         }
       }
