@@ -80,6 +80,8 @@ Navegue até **Settings** > **Secrets and variables** > **Actions** no seu repos
 
 After `git push`, the GitHub Actions pipeline will execute automatically. You can monitor its progress in the **Actions** tab of your GitHub repository. The pipeline will provision or update the AWS infrastructure and then upload your static site files to the configured S3 bucket.
 
+---
+
 ### ©️ Copyright
 
 **Developed by** [Andresinho20049](https://andresinho20049.com.br/)
